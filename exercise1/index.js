@@ -9,5 +9,5 @@ app.use("/calculator", calculatorRoutes);
 app.use("/", express.static("public"));
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`New app changes at http://localhost:${port}`);
 });
