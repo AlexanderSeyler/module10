@@ -1,11 +1,31 @@
-const add = (num1, num2) => num1 + num2;
-const subtract = (num1, num2) => num1 - num2;
-const multiply = (num1, num2) => num1 * num2;
-const divide = (num1, num2) =>
-  num2 !== 0 ? num1 / num2 : "Cannot divide by zero";
-
-const generateRandomId = () => {
-  return Math.random().toString(36).substr(2, 9); // Generates a random alphanumeric ID
+exports.add = (req, res) => {
+  let number1 = parseInt(req.query.num1);
+  let number2 = parseInt(req.query.num2);
+  let sum = number1 + number2;
+  console.log(sum);
+  res.status(200).json({ result: sum });
 };
 
-module.exports = { add, subtract, multiply, divide, generateRandomId };
+exports.subtract = (req, res) => {
+  let number1 = parseInt(req.query.num1);
+  let number2 = parseInt(req.query.num2);
+  let difference = number1 - number2;
+  console.log(difference);
+  res.status(200).json({ result: difference });
+};
+
+exports.divide = (req, res) => {
+  let number1 = parseInt(req.query.num1);
+  let number2 = parseInt(req.query.num2);
+  let fraction = number1 / number2;
+  console.log(fraction);
+  res.status(200).json({ result: fraction });
+};
+
+exports.multiply = (req, res) => {
+  let number1 = parseInt(req.query.num1);
+  let number2 = parseInt(req.query.num2);
+  let product = number1 * number2;
+  console.log(product);
+  res.status(200).json({ result: product });
+};

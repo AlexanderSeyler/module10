@@ -1,13 +1,12 @@
 const express = require("express");
 const app = express();
-const port = 3000;
-const calculatorRoutes = require("./routes/myCalculatorRoutes");
+const port = 7020;
+const friendRoutes = require("./routes/friendRoutes");
 
 app.use(express.json());
-app.use("/calculator", calculatorRoutes);
 
 app.use("/", express.static("public"));
-
+app.use("/friends", friendRoutes);
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
